@@ -1,14 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-const Login = () => {
-    const navigate=useNavigate()
-    const Adminlogin=()=>{
-           sessionStorage.clear()
-           navigate("/adminlogin")
-       }
-   
+const AdminLogin = () => {
 
     const [data, setData] = useState(
         {
@@ -18,34 +12,31 @@ const Login = () => {
         }
     )
 
-  
+
     const inputHandler = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
     }
 
     const readValue = () => {
         console.log(data)
-        axios.post("http://localhost:8080/signin", data).then(
+        axios.post("http://localhost:8080/adminlogin", data).then(
             (response) => {
                 console.log(response.data)
-                if (response.data.status == "success") {
-                    alert("successfully loginned")
+                const adminEmail = 'admin@gmail.com';
+                const adminPassword = 'admin123';
+                if (response.email == adminEmail && response.password == adminPassword) {
+                    // Admin login successful
+                    alert("Successfully loggined by admin")
+                }else{
+                    alert("cant login")
                 }
-                else {
-                    alert("error")
-                }
-          
-
-
-
-            }
-
-        )
+              }).catch().finally()
     }
-    return (
-        <div>
 
-            <div className="container">
+  return (
+    <div>
+
+<div className="container">
                 <div className="row g-3">
                     <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                         <div className="row g-3">
@@ -59,20 +50,16 @@ const Login = () => {
                             </div>
                             <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
                                 <button className="btn btn-success" onClick={readValue}>Login</button>
-                                <Link class="nav-link" to="/signup" >New account</Link>
-                            </div>
-                            <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                            <button className="btn btn-secondary" onClick={Adminlogin}>ADMIN</button>
-                            
+                                <Link class="nav-link" to="/adminDash" ></Link>
                             </div>
 
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>  
 
-        </div>
-    )
+    </div>
+  )
 }
 
-export default Login
+export default AdminLogin
