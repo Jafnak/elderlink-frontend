@@ -18,10 +18,10 @@ const NavAdmin = () => {
         <a class="nav-link" href="/driver">Transportation</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Educational support</a>
+        <a class="nav-link" href="/doctor">Doctor Consultancy</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Profile details</a>
+        <a class="nav-link" href="/userview">User details</a>
       </li>
     </ul>
   </div>

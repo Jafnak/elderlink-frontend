@@ -66,7 +66,7 @@ const inputHandler=(event)=>{
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Location</label>
-                                <input type="textarea" className="form-control" name="location" value={data.location} onChange={inputHandler}/>
+                                <input type="text" className="form-control" name="location" value={data.location} onChange={inputHandler}/>
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Gender</label>
@@ -74,7 +74,7 @@ const inputHandler=(event)=>{
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Age</label>
-                                <input type="date" className="form-control" name='age' value={data.age} onChange={inputHandler}/>
+                                <input type="text" className="form-control" name='age' value={data.age} onChange={inputHandler}/>
                             </div>
                            
                             

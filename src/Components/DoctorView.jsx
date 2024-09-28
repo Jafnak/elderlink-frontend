@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
-const DriverView = () => {
+const DoctorView = () => {
+
+
     const [data,setData] = useState([])
     const fetchData=()=>{
-        axios.post("http://localhost:8080/driverview",data).then(
+        axios.post("http://localhost:8080/doctorview",data).then(
             (response)=>{
                 //console.log(response.data)
                 setData(response.data)
@@ -17,8 +19,11 @@ const DriverView = () => {
     }
     
     useEffect(()=>{fetchData()},[])
+
+
+
   return (
-    <div style={{backgroundColor:'#c9d2d3',minHeight:'100vh',padding:'50px 0'}}>
+    <div  style={{backgroundColor:'#c9d2d3',minHeight:'100vh',padding:'50px 0'}}>
 
 <div className="container">
     <div className="row">
@@ -27,12 +32,11 @@ const DriverView = () => {
         <table class="table">
   <thead>
     <tr>
-      <th scope="col">DRIVER NAME</th>
-      <th scope="col">EMAIL</th>
-      <th scope="col">GENDER</th>
-      <th scope="col">AGE</th>
-      <th scope="col">PHONE</th>
+      <th scope="col">DOCTOR NAME</th>
+      <th scope="col">SPECIALIZATION</th>
       <th scope="col">LOCATION</th>
+      <th scope="col">PHONE</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -40,11 +44,10 @@ const DriverView = () => {
         (value,index)=>{
             return <tr>
             <th scope="row">{value.name}</th>
-            <td>{value.email}</td>
-            <td>{value.gender}</td>
-            <td>{value.age}</td>
-            <td>{value.phone}</td>
+            <td>{value.specialization}</td>
             <td>{value.location}</td>
+            <td>{value.phone}</td>
+            
           </tr>
         }
     )}
@@ -56,8 +59,9 @@ const DriverView = () => {
     </div>
 </div>
 
+
     </div>
   )
 }
 
-export default DriverView
+export default DoctorView

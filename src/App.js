@@ -9,6 +9,10 @@ import Caretaker from './Components/Caretaker';
 import CaretakerView from './Components/CaretakerView';
 import DriverView from './Components/DriverView';
 import AdminTransport from './Components/AdminTransport';
+import Doctor from './Components/Doctor';
+import DoctorView from './Components/DoctorView';
+import SignupView from './Components/SignupView';
+import Entertainment from './Components/Entertainment';
 
 function App() {
   return (
@@ -26,6 +30,10 @@ function App() {
          <Route path="/caretakerview" element={<CaretakerView/>}/>
          <Route path="/driverview" element={<DriverView/>}/>
          <Route path="/driver" element={<AdminTransport/>}/>
+         <Route path="/doctor" element={<Doctor/>}/>
+         <Route path="/doctorview" element={<DoctorView/>}/>
+         <Route path="/userview" element={<SignupView/>}/>       
+         <Route path="/enter" element={<Entertainment/>}/>       
     </Routes> </BrowserRouter>
 
 

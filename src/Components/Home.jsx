@@ -7,7 +7,7 @@ const Home = () => {
 
 
     return (
-        <div style={{backgroundColor:'#c9d2d3',minHeight:'100vh',padding:'50px 0'}}>
+        <div style={{ backgroundColor: '#c9d2d3', minHeight: '100vh', padding: '50px 0' }}>
             <Nav />
             <div className="container">
                 <div className="row">
@@ -44,9 +44,22 @@ const Home = () => {
                                 <div class="card" >
                                     <img class="card-img-top" src="edu.jpg" alt="Card image cap" height={250} />
                                     <div class="card-body">
-                                        <h5 class="card-title">Education Support</h5>
+                                        <h5 class="card-title">Doctor Consultancy</h5>
                                         <p class="card-text">ElderLink's education support offers elderly users easy access to learning resources, tutorials, and guidance on various topics, helping them stay informed and engaged.</p>
-                                        <a href="#" class="btn btn-primary">Click Here</a>
+                                        <a href="/doctorview" class="btn btn-primary">Click Here</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className="col col-12 col-sm-6 col-md-3 col-lg-4 col-xl-4 col-xxl-4">
+
+                                <div class="card" >
+                                    <img class="card-img-top" src="edu.jpg" alt="Card image cap" height={250} />
+                                    <div class="card-body">
+                                        <h5 class="card-title">Entertainment</h5>
+                                        <p class="card-text">ElderLink's education support offers elderly users easy access to learning resources, tutorials, and guidance on various topics, helping them stay informed and engaged.</p>
+                                        <a href="/enter" class="btn btn-primary">Click Here</a>
                                     </div>
                                 </div>
 
