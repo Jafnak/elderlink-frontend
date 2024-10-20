@@ -13,6 +13,13 @@ import Doctor from './Components/Doctor';
 import DoctorView from './Components/DoctorView';
 import SignupView from './Components/SignupView';
 import Entertainment from './Components/Entertainment';
+import Diet from './Components/Diet';
+import { Diab } from './Components/Diab';
+import Arthritis from './Components/Arthritis';
+import Osteo from './Components/Osteo';
+import Heart from './Components/Heart';
+import Blood from './Components/Blood';
+import PersonalDoctorPage from './Components/PersonalDoctorPage';
 
 function App() {
   return (
@@ -34,6 +41,13 @@ function App() {
          <Route path="/doctorview" element={<DoctorView/>}/>
          <Route path="/userview" element={<SignupView/>}/>       
          <Route path="/enter" element={<Entertainment/>}/>       
+         <Route path="/diet" element={<Diet/>}/>       
+         <Route path="/diab" element={<Diab/>}/>       
+         <Route path="/arthritis" element={<Arthritis/>}/>       
+         <Route path="/osteo" element={<Osteo/>}/>       
+         <Route path="/heart" element={<Heart/>}/>       
+         <Route path="/blood" element={<Blood/>}/>       
+         <Route path="/personal-doctor-page" element={<PersonalDoctorPage/>}/>       
     </Routes> </BrowserRouter>
 
 

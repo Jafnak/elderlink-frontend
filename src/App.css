@@ -37,8 +37,42 @@
   }
 }
 
-.container{
+.form-container{
   justify-content: center;
   align-items: center;
   display: flex;
+  min-height: 50vh;
+  background-color: #f8f9fa;
 }
+.row{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width:100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.para{
+  font-size: 25px;
+}
+.large-button{
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.rows{
+  justify-content: center;
+  align-items: center;
+}
+.navbar {
+  padding: 1rem; /* Increase padding for a better touch target */
+}
+
+.nav-link {
+  color: white !important; /* Ensure nav link text is always white */
+}
+
+.nav-link:hover {
+  text-decoration: underline; /* Add underline on hover for better indication */
+}
+/* Full-screen background with blur effect */

@@ -15,7 +15,9 @@ const Signup = () => {
             gender:"",
             age:"",
             password:"",
-            confirmpass:""
+            confirmpass:"",
+            gardian:"",
+            gardemail:""
             }
     );
     const inputHandler = (event) => {
@@ -81,6 +83,14 @@ const Signup = () => {
                                 <input type="text" className="form-control" name='age' value={data.age} onChange={inputHandler}/>
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label">Gardian </label>
+                                <input type="text" className="form-control" name='gardian' value={data.gardian} onChange={inputHandler}/>
+                            </div>
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label">Gardian email </label>
+                                <input type="text" className="form-control" name='gardemail' value={data.gardemail} onChange={inputHandler}/>
+                            </div>
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Password</label>
                                 <input type="password" className="form-control" name='password' value={data.password} onChange={inputHandler} />
                             </div>
@@ -89,7 +99,7 @@ const Signup = () => {
                                 <input type="password" className="form-control" name='confirmpass' value={data.confirmpass} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                                <button className="btn btn-dark" onClick={readValue}>Register</button>
+                                 <button className="btn btn-dark" onClick={readValue}>Register</button>
                                 <Link class="nav-link" to="/">Login</Link>
                             </div>
                         </div>

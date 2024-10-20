@@ -7,11 +7,10 @@ const Caretaker = () => {
     const [data, setData] = useState(
         {
             name: "",
-            email: "",
+            emailid: "",
             phone: "",
             address: "",
             gender: "",
-            age: "",
             role: ""
         }
     )
@@ -58,7 +57,7 @@ const Caretaker = () => {
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Email id</label>
-                                <input type="text" className="form-control" name='email' value={data.email} onChange={inputHandler} />
+                                <input type="text" className="form-control" name='emailid' value={data.emailid} onChange={inputHandler} />
                             </div>
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <label htmlFor="" className="form-label">Phone Number</label>
