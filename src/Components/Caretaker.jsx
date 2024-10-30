@@ -11,7 +11,9 @@ const Caretaker = () => {
             phone: "",
             address: "",
             gender: "",
-            role: ""
+            role: "",
+            date: "",
+            time: ""
         }
     )
 
@@ -77,10 +79,20 @@ const Caretaker = () => {
                                 <input type="text" className="form-control" name='role' value={data.role} onChange={inputHandler} />
                             </div>
 
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label">date</label>
+                                <input type="date" className="form-control" name='date' value={data.date} onChange={inputHandler} />
+                            </div>
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label"> Worktime</label>
+                                <input type="text" className="form-control" name='time' value={data.time} onChange={inputHandler} placeholder='HH-MM AM/PM'/>
+                            </div>
+
+
                             <center> <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-vertical">
                                 <button className="btn btn-dark" onClick={readValue}>Add Caretaker</button>
-                                <Link class="nav-link" to="/caretakerview" ></Link><br></br>
-                                <Link className="btn btn-dark" to="/caretakerview"> View All</Link>
+                        
+                                <Link className="btn btn-dark" to="/admincareview"> View All</Link>
 
                         </div></center>
 

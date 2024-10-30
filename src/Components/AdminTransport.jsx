@@ -12,6 +12,8 @@ const AdminTransport = () => {
             location:"",
             gender:"",
             age:"",
+            date:"",
+            time:"",
     
         }
     )
@@ -76,11 +78,21 @@ const inputHandler=(event)=>{
                                 <label htmlFor="" className="form-label">Age</label>
                                 <input type="text" className="form-control" name='age' value={data.age} onChange={inputHandler}/>
                             </div>
+
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label">Date</label>
+                                <input type="date" className="form-control" name='date' value={data.date} onChange={inputHandler}/>
+                            </div>
+                            <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                <label htmlFor="" className="form-label">Work Time</label>
+                                <input type="text" className="form-control" name='time' value={data.time} onChange={inputHandler}   placeholder='HH-MM AM/PM'/>
+                            </div>
                            
                             
                             <div className="col col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
                                 <button className="btn btn-dark" onClick={readValue}>Add Driver</button>
                                 <Link class="nav-link" to="/driverview" ></Link>
+                                <Link className="btn btn-dark" to="/admindriverview"> View All</Link>
                         
                             </div>
                         </div>

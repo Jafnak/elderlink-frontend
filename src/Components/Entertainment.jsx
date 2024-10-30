@@ -1,8 +1,9 @@
 import React from 'react'
-
+import Nav from './Nav';
 const Entertainment = () => {
   return (
     <div>
+      <Nav/>
       <center><h1>ELDERLINK</h1>
         <img src="elders.png" alt="" /></center>
       <div className="container">

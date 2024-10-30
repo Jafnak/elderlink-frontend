@@ -66,17 +66,24 @@ const NavAdmin = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link" href="/caretaker" style={{ fontSize: '1.2rem' }}>Caretaker</a>
+          <li className="nav-item">
+              <a className="nav-link" href="/doctor" style={{ fontSize: '1.2rem' }}>DOCTOR</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/driver" style={{ fontSize: '1.2rem' }}>Transportation</a>
+              <a className="nav-link" href="/caretaker" style={{ fontSize: '1.2rem' }}>CARETAKER</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/doctor" style={{ fontSize: '1.2rem' }}>Doctor Consultancy</a>
+              <a className="nav-link" href="/driver" style={{ fontSize: '1.2rem' }}>DRIVER</a>
+            </li>
+          
+            <li className="nav-item">
+              <a className="nav-link" href="/userview" style={{ fontSize: '1.2rem' }}>USERS</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/userview" style={{ fontSize: '1.2rem' }}>User Details</a>
+              <a className="nav-link" href="/adminbookview" style={{ fontSize: '1.2rem' }}>BOOKINGS</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/adminviewfeedback" style={{ fontSize: '1.2rem' }}>FEEDBACKS</a>
             </li>
           </ul>
           <div className="ms-auto"> {/* Add margin to the left for logout button */}

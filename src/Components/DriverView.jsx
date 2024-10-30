@@ -64,12 +64,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 const DriverView = () => {
     const [data, setData] = useState([]);
     const [appointment, setAppointment] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [appointmentFee] = useState(250); // Set appointment fee
+    const navigate = useNavigate();
 
     const fetchData = () => {
         axios.post("http://localhost:8080/driverview", {})
@@ -84,11 +87,16 @@ const DriverView = () => {
     useEffect(() => {
         fetchData();
     }, []);
+    const BookButton =()=>{
+        sessionStorage.clear();
+        navigate("/bookdoctor");
+    }
+  
 
     const bookAppointment = (driver) => {
         const appointmentDetails = {
             name: driver.name,
-            email: driver.email,
+            emailid: driver.emailid,
             gender: driver.gender,
             age: driver.age,
             phone: driver.phone,
@@ -106,6 +114,7 @@ const DriverView = () => {
 
     return (
         <div style={{ backgroundColor: '#c9d2d3', minHeight: '100vh', padding: '50px 0' }}>
+           <Nav/>
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -119,6 +128,8 @@ const DriverView = () => {
                                     <th scope="col">AGE</th>
                                     <th scope="col">PHONE</th>
                                     <th scope="col">LOCATION</th>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">WORK TIME</th>
                                     <th scope="col">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -126,18 +137,18 @@ const DriverView = () => {
                                 {data.map((driver, index) => (
                                     <tr key={index}>
                                         <th scope="row">{driver.name}</th>
-                                        <td>{driver.email}</td>
+                                        <td>{driver.emailid}</td>
                                         <td>{driver.gender}</td>
                                         <td>{driver.age}</td>
                                         <td>{driver.phone}</td>
                                         <td>{driver.location}</td>
+                                        <td>{driver.date}</td>
+                                        <td>{driver.time}</td>
                                         <td>
-                                            <button
-                                                className="btn btn-primary"
-                                                onClick={() => bookAppointment(driver)}
-                                            >
-                                                Book Appointment
-                                            </button>
+                                        <button
+                        className="btn btn-primary"
+                        onClick={BookButton} >BOOKING
+                      </button>
                                         </td>
                                     </tr>
                                 ))}
@@ -157,15 +168,18 @@ const DriverView = () => {
                                         </div>
                                         <div className="modal-body">
                                             <p><strong>Name:</strong> {appointment.name}</p>
-                                            <p><strong>Email:</strong> {appointment.email}</p>
+                                        
                                             <p><strong>Gender:</strong> {appointment.gender}</p>
                                             <p><strong>Age:</strong> {appointment.age}</p>
                                             <p><strong>Phone:</strong> {appointment.phone}</p>
                                             <p><strong>Location:</strong> {appointment.location}</p>
+                                    
                                             <p><strong>Appointment Fee:</strong> ₹{appointment.fee}</p>
                                         </div>
                                         <div className="modal-footer">
                                             <button type="button" className="btn btn-secondary" onClick={closeModal}>Done</button>
+                                <Link className="btn btn-dark" to="/driverview"> View All</Link>
+
                                         </div>
                                     </div>
                                 </div>

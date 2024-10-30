@@ -185,12 +185,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import Nav from './Nav';
 
 const CaretakerView = () => {
     const [data, setData] = useState([]);
     const [appointment, setAppointment] = useState(null);
     const [showModal, setShowModal] = useState(false);
     const [appointmentFee] = useState(250); // Set appointment fee
+    const navigate = useNavigate();
 
     const fetchData = () => {
         axios.post("http://localhost:8080/caretakerview", {})
@@ -209,7 +212,7 @@ const CaretakerView = () => {
     const bookAppointment = (caretaker) => {
         const appointmentDetails = {
             name: caretaker.name,
-            email: caretaker.email,
+            email: caretaker.emailid,
             gender: caretaker.gender,
             age: caretaker.age,
             role: caretaker.role,
@@ -225,9 +228,14 @@ const CaretakerView = () => {
     const closeModal = () => {
         setShowModal(false); // Hide the modal
     };
+    const BookButton =()=>{
+        sessionStorage.clear();
+        navigate("/bookdoctor");
+    }
 
     return (
         <div style={{ backgroundColor: '#c9d2d3', minHeight: '100vh', padding: '50px 0' }}>
+            <Nav/>
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -238,10 +246,12 @@ const CaretakerView = () => {
                                     <th scope="col">NAME</th>
                                     <th scope="col">EMAIL</th>
                                     <th scope="col">GENDER</th>
-                                    <th scope="col">AGE</th>
+                                    
                                     <th scope="col">ROLE</th>
                                     <th scope="col">PHONE</th>
                                     <th scope="col">ADDRESS</th>
+                                    <th scope="col">DATE</th>
+                                    <th scope="col">WORK TIME</th>
                                     <th scope="col">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -249,19 +259,19 @@ const CaretakerView = () => {
                                 {data.map((caretaker, index) => (
                                     <tr key={index}>
                                         <th scope="row">{caretaker.name}</th>
-                                        <td>{caretaker.email}</td>
+                                        <td>{caretaker.emailid}</td>
                                         <td>{caretaker.gender}</td>
-                                        <td>{caretaker.age}</td>
+                                    
                                         <td>{caretaker.role}</td>
                                         <td>{caretaker.phone}</td>
                                         <td>{caretaker.address}</td>
+                                        <td>{caretaker.date}</td>
+                                        <td>{caretaker.time}</td>
                                         <td>
-                                            <button
-                                                className="btn btn-primary"
-                                                onClick={() => bookAppointment(caretaker)}
-                                            >
-                                                Book Appointment
-                                            </button>
+                                        <button
+                        className="btn btn-primary"
+                        onClick={BookButton} >BOOKING
+                      </button>
                                         </td>
                                     </tr>
                                 ))}
@@ -281,9 +291,8 @@ const CaretakerView = () => {
                                         </div>
                                         <div className="modal-body">
                                             <p><strong>Name:</strong> {appointment.name}</p>
-                                            <p><strong>Email:</strong> {appointment.email}</p>
+                                            <p><strong>Email:</strong> {appointment.emailid}</p>
                                             <p><strong>Gender:</strong> {appointment.gender}</p>
-                                            <p><strong>Age:</strong> {appointment.age}</p>
                                             <p><strong>Role:</strong> {appointment.role}</p>
                                             <p><strong>Phone:</strong> {appointment.phone}</p>
                                             <p><strong>Address:</strong> {appointment.address}</p>
